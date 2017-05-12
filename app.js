@@ -7,6 +7,7 @@ vg.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+var port=80;
 module.exports = vg;
-vg.listen(80);
+vg.listen(port);
 console.log("vg is started and listening");
