@@ -1,0 +1,31 @@
+{
+    "port": 80,
+    "security": {
+        "tokenLife" : 360000000000000000000000000000000000000000000000000000000000000000000000000000000
+    },
+    "mongoose": {
+        "uri": "mongodb://192.168.0.120:27017/vgd"
+    },
+    "default": {
+        "api": {
+            "version" : "v1"
+        },
+        "user": {
+            "username": "myapi",
+            "password": "abc1234"
+        },
+        "client": {
+            "name": "vgAppClient",
+            "clientId": "$vgodown1",
+            "clientSecret": "grnklnio576543hyjvbk"
+        }
+    },
+    "domain" : {
+      "baseURL" : "http://localhost/reset/",
+      "emailURL":"http//localhost/api/userbasic/verfication?token="
+  },
+    "currency":{
+      "url":"http://apilayer.net/api/live?access_key=9007efdb522902977ed56566f93c4683",
+      "scheduletime":"60 * * * * *"
+    }
+}
