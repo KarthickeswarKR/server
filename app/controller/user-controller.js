@@ -40,7 +40,7 @@ res.send({
 "longtitude":"45.65",
 "products":{
 "productStockId":" 21454545445",
-"productId":{
+"details":{
 "productId":"45632185415",
 "productName":"cement2",
 "specifications":{
@@ -78,7 +78,7 @@ router.get('/products/getproductsofstockarea',function(req,res,next){
 [
 {
 "productStockId":" 21454545445",
-"productId":{
+"details":{
 "productId":"45632185415",
 "productName":"cement1",
 "specifications":{
@@ -94,7 +94,7 @@ router.get('/products/getproductsofstockarea',function(req,res,next){
 },
 {
 "productStockId":" 21454545445",
-productId:{
+"details":{
 "productId":"45632185415",
 "productName":"cement2",
 "specifications":{
@@ -123,7 +123,7 @@ res.send({
 "sellId":"562252155",
 "orderName":"cementorder",
 "productStockId":" 21454545445",
-"productId":{
+"productDetails":{
 "productId":"45632185415",
 "productName":"cement2",
 "specifications":{
@@ -144,7 +144,7 @@ res.send({
 {
 "orderId":"9624855456",
 "productStockId":" 21454545445",
-"productId":{
+"productDetails":{
 "productId":"45632185415",
 "productName":"cement1",
 "specifications":{
@@ -181,11 +181,11 @@ router.get('/orders/getorderdetails', function(req, res, next) {
 res.send({
 "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "stockareaId":"45478521452",
-"orders":[
+"orders":
 {
 "orderId":"9624855456",
 "productStockId":" 21454545445",
-"productId":{
+"productDetails":{
 "productId":"45632185415",
 "productName":"cement1",
 "specifications":{
@@ -203,7 +203,6 @@ res.send({
 "quantity":"350",
 "cost":"5900"
 }
-]
 }
 
 );
@@ -260,5 +259,76 @@ res.send({
   "longtitude":"45.12"
 
 });
+});
+router.get('/sell/mapservice', function(req, res, next) {
+res.send({
+"stockareas":[{
+"stockareaId":"25115412",
+"stockareaName":"s1",
+"latitude":"12.65",
+"longtitude":"25.65"
+},
+{
+"stockareaId":"55115412",
+"stockareaName":"s2",
+"latitude":"72.5",
+"longtitude":"65.6"
+}
+]
+}
+);
+});
+router.get('/orders/getordersbyproductinstockarea', function(req, res, next) {
+res.send({
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+"stockareaId":"6485454",
+"orders":[
+{
+"orderId":"56248621455456",
+"sellId":"562252155",
+"orderName":"cementorder",
+"productStockId":" 21454545445",
+"productDetails":{
+"productId":"6545463152",
+"productName":"cement2",
+"specifications":{
+"grade":"A",
+"purity":"86%"
+}
+},
+
+"destinationStockareaId":{
+"stockareaId":"45478521452",
+"stockareaName":"s2",
+"latitude":"18.45",
+"longtitude":"45.35"
+},
+"quantity":"35",
+"cost":"7890"
+},
+{
+"orderId":"9624855456",
+"productStockId":" 21454545445",
+"productDetails":{
+"productId":"6545463152",
+"productName":"cement1",
+"specifications":{
+"grade":"B",
+"purity":"72%"
+}
+},
+"orderName":"steelorder",
+"destinationStockareaId":{
+"stockareaId":"45478521452",
+"stockareaName":"s3",
+"latitude":"78.12",
+"longtitude":"84.50"
+},
+"quantity":"350",
+"cost":"5900"
+}
+]
+}
+);
 });
 module.exports = router;
