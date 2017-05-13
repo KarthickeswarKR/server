@@ -13,158 +13,207 @@ res.send({
 });
 router.get('/products/getstockareas',  function(req, res, next) {
 res.send({
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "stockarea":[
 {
 "stockareaId":"5455444444",
 "stockareaName":"s1",
-"lat":"12.65",
-"lng":"45.65",
-"userId":"61154145",
-"products":
-[
-{
-"productId":"321455421"
-},
-{
-"productId":"32145455421",
-}
-]
+"latitude":"12.65",
+"longtitude":"45.65"
 },
 {
 "stockareaId":"5455444444",
 "stockareaName":"s2",
-"lat":"12.65",
-"lng":"45.65",
-"userId":"61154145",
-"products":
-[
-{
-"productId":"321455421"
-},
-{
-"productId":"32145455421",
+"latitude":"12.65",
+"longtitude":"45.65"
 }
 ]
 }
-]
-})
-}
-);
-router.get('/product/productdetails', function(req, res, next) {
+)
+});
+router.get('/product/getproductinfoforstockarea', function(req, res, next) {
 res.send({
-"productId":" 21454545445",
+"stockareaId":"5455444444",
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+"stockareaName":"s2",
+"latitude":"12.65",
+"longtitude":"45.65",
+"products":{
+"productStockId":" 21454545445",
+"productId":{
+"productId":"45632185415",
 "productName":"cement2",
-"price":"78",
-"minquantity":"100",
-"unit":"kg",
+"specifications":{
+"grade":"A",
+"purity":"86%"
+}
+},
 "stockDetails":{
 "inStock":"65000",
 "incomingStock":"1765",
-"outgoingStock":"4450",
-"unit":"kg"
+"outgoingStock":"4450"
+}
 }
 }
 )
 });
-router.get('/products/getproducts',function(req,res,next){
-  res.send({
-"stockarea":[
-  {
-  "products":
-  [
-  {
-  "productId":"321455145421",
-  "productName":"ce1",
-  "price":"450",
-  "minquantity":"100",
-  "unit":"kg",
-  "stockDetails":{
-  "inStock":"65000",
-  "incomingStock":"12651",
-  "outgoingStock":"24500",
-  "unit":"kg"
-  }
-  },
-  {
-  "productId":"32145455421",
-  "productName":"cement2",
-  "price":"78",
-  "minquantity":"100",
-  "unit":"kg",
-  "stockDetails":{
-  "inStock":"65000",
-  "incomingStock":"1765",
-  "outgoingStock":"4450",
-  "unit":"kg"
-  }
-  }
-  ]
-  }
-]
-}  
-)
-});
-router.get('/orders/getallorders', function(req, res, next) {
+router.get('/product/getproductinfobyid', function(req, res, next) {
 res.send({
+"productId":" 21454545445",
+"productName":"cement2",
+"productDetails":"100% best  quality",
+"specifications":{
+"grade":"A",
+"purity":"86%"
+}
+}
+
+)
+});
+
+router.get('/products/getproductsofstockarea',function(req,res,next){
+  res.send({
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+"products":
+[
+{
+"productStockId":" 21454545445",
+"productId":{
+"productId":"45632185415",
+"productName":"cement1",
+"specifications":{
+"grade":"B",
+"purity":"98%"
+}
+},
+"stockDetails":{
+"inStock":"65000",
+"incomingStock":"12651",
+"outgoingStock":"24500"
+}
+},
+{
+"productStockId":" 21454545445",
+productId:{
+"productId":"45632185415",
+"productName":"cement2",
+"specifications":{
+"grade":"A",
+"purity":"86%"
+}
+},
+"stockDetails":{
+"inStock":"65000",
+"incomingStock":"1765",
+"outgoingStock":"4450"
+}
+}
+]
+}
+
+)
+});
+router.get('/orders/getordersofstockarea', function(req, res, next) {
+res.send({
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+"stockareaId":"45478521452",
 "orders":[
 {
 "orderId":"56248621455456",
-"productId":"562252155",
-"stockareaId":"45478521452",
+"sellId":"562252155",
 "orderName":"cementorder",
-"address":"Madurai,Tamilnadu",
+"productStockId":" 21454545445",
+"productId":{
+"productId":"45632185415",
+"productName":"cement2",
+"specifications":{
+"grade":"A",
+"purity":"86%"
+}
+},
+
+"destinationStockareaId":{
+"stockareaId":"45478521452",
+"stockareaName":"s2",
+"latitude":"18.45",
+"longtitude":"45.35"
+}
+},
 "quantity":"35",
-"unit":"kg",
 "cost":"7890"
 },
 {
 "orderId":"9624855456",
-"productId":"462252155",
-"stockareaId":"15478521452",
+"productStockId":" 21454545445",
+"productId":{
+"productId":"45632185415",
+"productName":"cement1",
+"specifications":{
+"grade":"B",
+"purity":"72%"
+}
+},
 "orderName":"steelorder",
-"address":"chennai,Tamilnadu",
+"destinationStockareaId":{
+"stockareaId":"45478521452",
+"stockareaName":"s3",
+"latitude":"78.12",
+"longtitude":"84.50"
+},
 "quantity":"350",
-"unit":"kg",
 "cost":"5900"
 }
 ]
 }
+
 );
 });
 router.get('/stockarea/getstockarea', function(req, res, next) {
 res.send({
+  "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "stockareaId":"5154321312",
 "stockareaName":"s2",
-"lat":"12.65",
-"lng":"45.65",
-"userId":"61154145",
-"products":
-[
-{
-"productId":"321455421"
-},
-{
-"productId":"32145455421",
-}
-]
+"latitude":"12.65",
+"longtitude":"45.65",
+"noOfProducts":25
 }
 );
 });
 router.get('/orders/getorderdetails', function(req, res, next) {
 res.send({
-"orderId":"235625214",
-"productId":"462252155",
-"stockareaId":"15478521452",
+"userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+"stockareaId":"45478521452",
+"orders":[
+{
+"orderId":"9624855456",
+"productStockId":" 21454545445",
+"productId":{
+"productId":"45632185415",
+"productName":"cement1",
+"specifications":{
+"grade":"B",
+"purity":"72%"
+}
+},
 "orderName":"steelorder",
-"address":"chennai,Tamilnadu",
+"destinationStockareaId":{
+"stockareaId":"45478521452",
+"stockareaName":"s3",
+"latitude":"78.12",
+"longtitude":"84.50"
+},
 "quantity":"350",
-"unit":"kg",
 "cost":"5900"
 }
+]
+}
+
 );
 });
 router.get('/products/autocomplete', function(req, res, next) {
-res.send({
+res.send(
+  {
+  "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "products":[
 {
 "productId":" 21454545445",
@@ -195,13 +244,23 @@ res.send({
 router.get('/users/logout', function(req, res, next) {
 res.send(
   {
+    "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "status":"successfully logged out"
 }
 );
 });
 router.get('/token/checktoken', function(req, res, next) {
 res.send({
+  "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
 "status":"successfully verified"
+});
+});
+router.get('/productdestination/getdestinationforproductstockarea', function(req, res, next) {
+res.send({
+  "userId":"ba8195f0-0540-11e7-be55-4d571cb9b05b",
+  "latitude":"54.45",
+  "longtitude":"45.12"
+
 });
 });
 module.exports = router;
