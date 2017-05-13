@@ -137,7 +137,6 @@ res.send({
 "stockareaName":"s2",
 "latitude":"18.45",
 "longtitude":"45.35"
-}
 },
 "quantity":"35",
 "cost":"7890"
@@ -165,7 +164,6 @@ res.send({
 }
 ]
 }
-
 );
 });
 router.get('/stockarea/getstockarea', function(req, res, next) {
