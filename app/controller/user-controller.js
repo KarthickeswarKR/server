@@ -260,7 +260,7 @@ res.send({
 
 });
 });
-router.get('/sell/mapservice', function(req, res, next) {
+router.get('/buy/getdestinationsforproduct', function(req, res, next) {
 res.send({
 "stockareas":[{
 "stockareaId":"25115412",
