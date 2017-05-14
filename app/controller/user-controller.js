@@ -472,10 +472,19 @@ res.send({
 "Sellid":"52645454",
 "Productstockid":"4547858585",
 "productId":"125485",
+"package":[{
+"packageSize":"25",
+"packagesAvailable":"12354",
 "cost":"954",
-"package":"25kg",
-"quantityAvailable":"12354",
-"minimumPackages":"100",
+"minimumPackages":"100"
+},
+{
+"packageSize":"50",
+"packagesAvailable":"12354",
+"cost":"954",
+"minimumPackages":"50"
+}],
+
 "status": "active",
     "updatedOn": {
         "$date": "2017-02-16T06:47:17.575Z"
@@ -515,10 +524,19 @@ res.send({
 "Sellid":"52645454",
 "Productstockid":"4547858585",
 "productId":"125485",
+"package":[{
+"packageSize":"25",
+"packagesAvailable":"12354",
 "cost":"954",
-"package":"25kg",
-"quantityAvailable":"12354",
-"minimumPackages":"100",
+"minimumPackages":"100"
+},
+{
+"packageSize":"50",
+"packagesAvailable":"12354",
+"cost":"954",
+"minimumPackages":"50"
+}],
+
 "status": "active",
     "updatedOn": {
         "$date": "2017-02-16T06:47:17.575Z"
