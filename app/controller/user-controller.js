@@ -19,13 +19,31 @@ res.send({
 "stockareaId":"5455444444",
 "stockareaName":"s1",
 "latitude":"12.65",
-"longtitude":"45.65"
+"longtitude":"45.65",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 },
 {
 "stockareaId":"5455444444",
 "stockareaName":"s2",
 "latitude":"12.65",
-"longtitude":"45.65"
+"longtitude":"45.65",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 ]
 }
@@ -52,7 +70,16 @@ res.send({
 "inStock":"65000",
 "incomingStock":"1765",
 "outgoingStock":"4450"
-}
+},
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 }
 )
@@ -65,7 +92,16 @@ res.send({
 "specifications":{
 "grade":"A",
 "purity":"86%"
-}
+},
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 
 )
@@ -90,7 +126,16 @@ router.get('/products/getproductsofstockarea',function(req,res,next){
 "inStock":"65000",
 "incomingStock":"12651",
 "outgoingStock":"24500"
-}
+},
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 },
 {
 "productStockId":" 21454545445",
@@ -106,7 +151,16 @@ router.get('/products/getproductsofstockarea',function(req,res,next){
 "inStock":"65000",
 "incomingStock":"1765",
 "outgoingStock":"4450"
-}
+},
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 ]
 }
@@ -139,7 +193,16 @@ res.send({
 "longtitude":"45.35"
 },
 "quantity":"35",
-"cost":"7890"
+"cost":"7890",
+"status": "pending",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 },
 {
 "orderId":"9624855456",
@@ -160,7 +223,16 @@ res.send({
 "longtitude":"84.50"
 },
 "quantity":"350",
-"cost":"5900"
+"cost":"5900",
+"status": "inTransit",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 ]
 }
@@ -173,7 +245,16 @@ res.send({
 "stockareaName":"s2",
 "latitude":"12.65",
 "longtitude":"45.65",
-"noOfProducts":25
+"noOfProducts":25,
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 );
 });
@@ -201,7 +282,16 @@ res.send({
 "longtitude":"84.50"
 },
 "quantity":"350",
-"cost":"5900"
+"cost":"5900",
+"status": "approved",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 }
 
@@ -234,7 +324,16 @@ res.send({
 "state":"TamilNadu",
 "pincode":"625001",
 "email":"karthick@gmail.com",
-"phone":"9994673814"
+"phone":"9994673814",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 );
 });
@@ -266,13 +365,31 @@ res.send({
 "stockareaId":"25115412",
 "stockareaName":"s1",
 "latitude":"12.65",
-"longtitude":"25.65"
+"longtitude":"25.65",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 },
 {
 "stockareaId":"55115412",
 "stockareaName":"s2",
 "latitude":"72.5",
-"longtitude":"65.6"
+"longtitude":"65.6",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 ]
 }
@@ -304,7 +421,16 @@ res.send({
 "longtitude":"45.35"
 },
 "quantity":"35",
-"cost":"7890"
+"cost":"7890",
+"status": "pending",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 },
 {
 "orderId":"9624855456",
@@ -325,10 +451,86 @@ res.send({
 "longtitude":"84.50"
 },
 "quantity":"350",
-"cost":"5900"
+"cost":"5900",
+"status": "approved",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
 }
 ]
 }
 );
 });
+router.get('/buy/getsellbyproductsinstockarea', function(req, res, next) {
+res.send({
+"sell":[{
+"Sellid":"52645454",
+"Productstockid":"4547858585",
+"productId":"125485",
+"cost":"954",
+"package":"25kg",
+"quantityAvailable":"12354",
+"minimumPackages":"100",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
+},
+{
+"Sellid":"52645454",
+"Productstockid":"34547885",
+"productId":"5125485",
+"cost":"294",
+"package":"50kg",
+"quantityAvailable":"78954",
+"minimumPackages":"120",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
+}
+]
+}
+
+);
+});
+router.get('/buy/getsellinfo', function(req, res, next) {
+res.send({
+"sell":{
+"Sellid":"52645454",
+"Productstockid":"4547858585",
+"productId":"125485",
+"cost":"954",
+"package":"25kg",
+"quantityAvailable":"12354",
+"minimumPackages":"100",
+"status": "active",
+    "updatedOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "createdOn": {
+        "$date": "2017-02-16T06:47:17.575Z"
+    },
+    "__v": 0
+
+}
+}
+);
+});
+
 module.exports = router;
