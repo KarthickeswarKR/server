@@ -564,7 +564,7 @@ res.send({
 "code":200
 });
 });
-router.post('/stockarea/update products', function(req, res, next) {
+router.post('/stockarea/updateproducts', function(req, res, next) {
 res.send({
 "status":"success",
 "message":"data added successfully",
