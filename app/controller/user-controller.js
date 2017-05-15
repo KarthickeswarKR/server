@@ -550,5 +550,67 @@ res.send({
 }
 );
 });
-
+router.post('/stockarea/addstockarea', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data added successfully",
+"code":200
+});
+});
+router.post('/users/adduser', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data added successfully",
+"code":200
+});
+});
+router.post('/stockarea/update products', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data added successfully",
+"code":200
+});
+});
+router.post('/order/addorder', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data added successfully",
+"code":200
+});
+});
+router.post('/stockarea/delete', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data deleted successfully",
+"code":200
+});
+});
+router.post('/stockarea/rename', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data updated successfully",
+"code":200
+});
+});
+router.post('/product/delete', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data deleted successfully",
+"code":200
+});
+});
+router.post('/users/update', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data updated successfully",
+"code":200
+});
+});
+router.post('/users/delete', function(req, res, next) {
+res.send({
+"status":"success",
+"message":"data deleted successfully",
+"code":200
+});
+});
 module.exports = router;
