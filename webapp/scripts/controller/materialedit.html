@@ -1,0 +1,125 @@
+
+  <div id="page-content" ng-init="edit()">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+
+  </div>
+  <section class="page-title center" >
+
+      <h1>Admin Material</h1>
+
+  </section>
+
+      <section>
+         <div class="row">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+               <form class="form inputs-underline" enctype="multipart/form-data">
+                  <section>
+                     <h3>Material</h3>
+                     <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                           <div class="form-group">
+                              <label for="title">Material Name</label>
+                              <input type="text" class="form-control" name="title" id="title" ng-model="selectedUsr.name" placeholder="MaterialName">
+                           </div>
+                           <!--end form-group-->
+                        </div>
+                        <!--
+                        <div class="col-md-3 col-sm-3">
+                           <div class="form-group">
+                              <label for="category">Category</label>
+                              <select class="form-control selectpicker" name="category" id="category">
+                                 <option value="">Category</option>
+                                 <option value="1">Restaurant</option>
+                                 <option value="2">Event</option>
+                                 <option value="3">Adrenaline</option>
+                                 <option value="4">Sport</option>
+                                 <option value="5">Wellness</option>
+                              </select>
+                           </div>
+                        </div>
+            -->
+                     </div>
+                     <div class="row">
+                       <div class="col-md-9 col-sm-9">
+                          <div class="form-group">
+                             <label for="title">Other Names</label>
+                             <input type="text" class="form-control" name="title" ng-model="selectedUsr.othernames"
+                             id="title" placeholder="Name">
+                          </div>
+                          <!--end form-group-->
+                       </div>
+                       <div class="col-md-3 col-sm-3">
+                          <div class="form-group">
+                             <label for="title">CAS No</label>
+                             <input type="text" class="form-control" name="title" ng-model="selectedUsr.casno" id="title" placeholder="CASNO">
+                          </div>
+                          <!--end form-group-->
+                       </div>
+                        <!--end col-md-9-->
+                        <!--col-md-3-->
+                     </div>
+                     <h3>Enter Units</h3>
+                     <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                           <div class="form-group">
+                              <label for="category">Units</label>
+                              <input type="text" class="form-control" name="title" ng-model="selectedUsr.unit" id="title" placeholder="Name">
+
+                           </div>
+                        </div>
+                     </div>
+                     <!--end row-->
+                     <div class="row">
+                        <div class="col-md-4 col-sm-3">
+                           <div class="form-group">
+                              <label for="tags">Filter Name</label>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-sm-3">
+                           <div class="form-group">
+                              <label for="tags">Tags</label>
+                           </div>
+                        </div>
+
+                     </div>
+                     <div class="row" ng-repeat="data in selectedUsr.filters">
+
+                        <div class="col-md-4 col-sm-3">
+                           <div class="form-group">
+                              <input type="text" class="form-control" name="tags" id="tags" placeholder="Name" ng-model="data.name">
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-sm-3" >
+                           <div class="form-group">
+                              <input type="text" class="form-control" name="tags" id="tags" placeholder="+ Add tag" ng-model="data.value">
+                           </div>
+                        </div>
+
+                        <div class="form-group" >
+                          <a href="#" class="btn btn-primary btn-rounded" ng-click="remove(data.name,data.value)">-</a>
+                           <a href="#" class="btn btn-primary btn-rounded" ng-show="$last" ng-click="addmore()">+</a>
+
+                       </div>
+
+                     </div>
+
+
+                     <!--end form-group-->
+                     <!--end form-group-->
+                  </section>
+                  <hr>
+                  <section class="center">
+                     <div class="form-group">
+                        <button type="submit" ng-click="submit()" class="btn btn-primary btn-rounded">Submit</button>
+                     </div>
+                     <!--end form-group-->
+                  </section>
+               </form>
+               <!--end form-->
+            </div>
+            <!--end col-md-6-->
+         </div>
+         <!--end row-->
+      </section>
+    </div>

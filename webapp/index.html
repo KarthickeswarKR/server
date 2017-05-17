@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="vgApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>virtualgodown</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="asset/images/favicon.ico" />
+    <link rel="shortcut icon" href="asset/images/favicon.ico" type="image/x-icon">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Icons -->
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+    <!-- Angular Notification -->
+    <link href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Angular LoadingBar -->
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.css"/>
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="bower_components/uikit/css/uikit.almost-flat.min.css" media="all">
+
+    <link rel="stylesheet" href="assets/css/vg.css" media="all">
+
+    <link href="assets/css/easy-autocomplete.css" rel="stylesheet" type="text/css"/>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+
+<body>
+
+<div ui-view></div>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+
+ <!-- Angular Related scripts -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<!-- Angular UI-Bootstrap -->
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<!-- Angular LoadingBar -->
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+
+<!-- Angular Notification -->
+<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+
+<!-- Angular Validator -->
+<script src="bower_components/tg-angular-validator/dist/angular-validator.js"></script>
+
+<!-- Local Storage -->
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+
+<!-- Main Script file (Core) -->
+<script src="scripts/app.js"></script>
+
+<!-- VG script files for controller -->
+<script type="text/javascript" src="scripts/controller/logincontroller.js"></script>
+<script type="text/javascript" src="scripts/controller/dashboardcontroller.js"></script>
+<script type="text/javascript" src="scripts/controller/dashboardheadercontroller.js"></script>
+
+
+<!-- VG Script files for services -->
+<script type="text/javascript" src="scripts/services/loginservice.js"></script>
+<script type="text/javascript" src="scripts/services/systemservice.js"></script>
+<script type="text/javascript" src="scripts/services/dashboardservice.js"></script>
+</body>
+</html>

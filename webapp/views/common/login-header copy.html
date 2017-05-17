@@ -1,0 +1,76 @@
+<!-- main header -->
+<header id="header_main" ng-controller="loginHeaderController">
+    <div class="header_main_content">
+        <nav class="uk-navbar">
+            <div class="">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <img src="assets/img/login-icon.png" alt="login icon"/>
+                    </button>
+                    <a class="navbar-brand desktopLogo" href=""><img src="assets/img/vg-logo.png" class="img-responsive" alt="logo"/></a>
+                    <a class="navbar-brand mobileLogo" href=""><img src="assets/img/mobileLogo.png" alt="mobilelogo"/></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control inputMaxWidth" name="username" ng-model="username" placeholder="User Name">
+                            <label class="checkbox inline">
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control inputMaxWidth" name="password" ng-model="password" placeholder="Password">
+                            <a class="help-inline" ui-sref="forgotPassword"  href="">Forgot Password?</a>
+                        </div>
+
+                        <button type="button" ng-click="fnAuthenticateUser()" class="btn signButton">Sign In</button>
+                        <!--<a href="">Forgot Password ?</a>-->
+
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="header_main_search_form">
+        <i class="md-icon header_main_search_close material-icons">&#xE5CD;</i>
+        <form class="uk-form">
+            <input type="text" class="header_main_search_input" />
+            <button class="header_main_search_btn uk-button-link"><i class="md-icon material-icons">&#xE8B6;</i></button>
+        </form>
+    </div>
+</header><!-- main header end -->
+
+
+<!--HEADER AREA STARTS HERE-->
+<!--
+<div class="navbar navbar-default navbar-fixed-top topHeader" ng-controller="loginHeaderController">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <img src="asset/images/login-icon.png" alt="login icon"/>
+            </button>
+            <a class="navbar-brand desktopLogo" href=""><img src="asset/images/vg-logo.png" alt="logo"/></a>
+            <a class="navbar-brand mobileLogo" href=""><img src="asset/images/mobileLogo.png" alt="mobilelogo"/></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <form name="loginForm" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control inputMaxWidth" name="username" placeholder="User Name"
+                           ng-model="username">
+                    <label class="checkbox inline">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control inputMaxWidth" name="password" placeholder="Password" ng-model="password">
+                    <a class="help-inline" ui-sref="forgotPassword" href="">Forgot Password?</a>
+                </div>
+
+                <button type="button" ng-click="fnAuthenticateUser()" class="btn signButton">Sign In</button>
+
+                <button type="button" class="forgotPassword"><i class="fa fa-question-circle"></i></button>
+                <a class="help-inline" href=""></a>
+            </form>
+        </div>
+    </div>
+</div>-->

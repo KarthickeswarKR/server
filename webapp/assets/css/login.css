@@ -1,0 +1,134 @@
+.navbar-form input[type="text"],.navbar-form input[type="password"]{
+    border-width: 1px;
+    border-color: rgb( 62, 126, 202 );
+    border-style: solid;
+    background-color: rgb( 242, 248, 255 );
+    height: 35px;
+    border-radius: 0;
+    width: 220px;
+    display: block;
+}
+.topHeader .signButton {
+    background-color: rgb( 79, 189, 112 );
+    /*width: 92px;*/
+    padding: 5px;
+    height: 34px;
+    color: #fff;
+    border-radius: 0;
+    font-size: 16px;
+    margin-top: -20px;
+}
+.topHeader .signButton:hover {
+    background: #3da45c !important;
+}
+.loginInput {
+    border-width: 1px;
+    border-color: rgb( 197, 197, 197 );
+    border-style: solid;
+    height: 43px;
+    border-radius: 0;
+    font-size: 13px;
+}
+.singinButton {
+    background-color: rgb( 79, 189, 112 );
+    height: 45px;
+    border-radius: 0;
+    border: none;
+    font-size: 24px;
+    font-weight: 100;
+    color: #fff;
+}
+.resLogin {
+    font-size: 22px !important;
+    color: #fff !important;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none !important;
+    background: #3b5999
+}
+.navbar-brand {
+    padding: 19px;
+}
+.mobileLogo {
+    display: none;
+}
+.desktopLogo {
+    display: block;
+}
+.navbar-form {
+    margin-top: 10px;
+}
+.loginRightInner {
+    padding: 43px 0;
+    border-right: #eee solid 2px;
+}
+.footerBG{
+    background: rgba(0, 0, 0, 0) url("../images/footerbg.png") repeat-x center ;
+    bottom: 0;
+    margin: 0;
+    padding-top: 120px;
+    position: fixed;
+    width: 100%;
+}
+.footerBG p{
+    text-align: left;
+}
+.loginTitle {
+    font-weight: 100;
+    color: #5e5e5e;
+    font-size: 32px;
+}
+.loginDis {
+    color: #5e5e5e;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 15px 0;
+}
+.loginTitleLogin {
+    font-weight: 100;
+    color: #5e5e5e;
+    font-size: 26px;
+}
+.navbar-default .navbar-toggle {
+    border: none;    
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+.navbar-form {
+    box-shadow: none;
+}
+.inputMaxWidth{
+    max-width: 359px;
+}
+.signUpContainer {
+    margin-left: 8px;
+}
+
+/*RESPONSIVE FIXES*/
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; 
+    }
+    .marginTopAlign {
+        margin-top: 8px;
+    }
+}
+@media only screen and (max-device-width: 280px), screen and (max-width: 767px) {
+    .footerBG{
+        position: relative;
+    }
+}
+@media only screen and (max-device-width: 280px), screen and (max-width: 767px) {
+    .mobileLogo {
+        display: block;
+    }
+    .desktopLogo {
+        display: none;
+    }
+    .topHeader .signButton {
+        margin: 0;
+    }
+}
+

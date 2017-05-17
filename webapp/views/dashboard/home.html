@@ -1,0 +1,640 @@
+
+<!-- Including header -->
+<div ng-controller="dashboardHeaderController" ng-include="'views/common/user-header.html'"></div>
+
+<div>
+
+<style type="text/css">
+    
+.tabgroup{
+    display: inherit;
+    width: 100%;
+    background: white;
+    
+}
+.tab{
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    float: left;
+    background-color: #fafafa;
+    color: black;
+}
+
+.selected{
+    padding: 10px;
+    border: 1px solid grey;
+    float: left;
+    background-color: grey;
+    color: white;
+}
+.tabcontents{
+    overflow-y: auto;
+    width: 921px;
+    position: relative;
+    height: 522px;
+}
+.tradeinfo{
+   height: auto;
+   position: absolute;
+   width: 150px;
+   padding: 10px;
+   z-index: 10;
+   top: 10px;
+   background-color: white;
+   right: 10px;
+}
+.tradeinfoheading{
+    text-align: center;
+    padding: 10px;
+}
+
+.middlesection{
+    display: table;
+    width: 100%;
+}
+.maindiv{
+      min-width: 920px;
+    display: table-cell;
+    height: 547px;
+}
+</style>
+
+
+
+<div class="middlesection"><div class="maindiv">
+<div class="tabgroup" ng-init="tab=1">
+  
+    <div class="tab" ng-class="{selected: tab==1}" ng-click="tab = 1" >Map</div>
+  <div class="tab" ng-class="{selected: tab==2}" ng-click="tab = 2" >Product Info</div>
+    <div class="tab" ng-class="{selected: tab==3}" ng-click="tab = 3" >Stockarea Info</div>
+    <div class="tab" ng-class="{selected: tab==4}" ng-click="tab = 4"  >Order History</div>
+  <div class="tab" ng-class="{selected: tab==5}" ng-click="tab = 5"  >Add Material</div>
+  <div class="tab" ng-class="{selected: tab==6}" ng-click="tab = 6"  >Settings</div>
+</div>
+<div id="mainsection" style="width: 921px;position: relative;height: 522px;">
+<div class="tabcontents" ng-show="tab == 1">
+<div id="tradeinfo" class="tradeinfo">
+  
+<div class="tradeinfoheading"><b>Trade Info</b></div>
+<div id="tradeinfoCost">Cost 15$ per KG</div>
+<div id="tradeinfoDistance">Distance 250KM</div>
+<div id="tradeinfoTime">Time 125Mins</div>
+
+</div>
+<div>
+   <script>
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 3,
+    center: {lat: 0, lng: -180},
+    mapTypeId: 'terrain'
+  });
+
+
+
+  var flightPlanCoordinates = [[
+    {lat: 37.772, lng: -122.214},
+    {lat: -27.467, lng: 153.027}
+  ],[
+    {lat: 37.772, lng: -122.214},
+    {lat: -27.467, lng: 130.027}
+  ]];
+  
+  var ids = ['1213123','4324324235'];
+  var tradeinfo = [{cost:'15$ per KG',distance:'2500KM',time:'125Mins'},{cost:'35$ per KG',distance:'6500KM',time:'725Mins'}];
+  var linemap = new Array();
+  for(n=0;n<flightPlanCoordinates.length;n++){
+    if(n==0)
+      stcolor = '#42f44e';
+    else
+      stcolor = '#bbc9c7';
+ linemap[n] = new google.maps.Polyline({
+    path: flightPlanCoordinates[n],
+    geodesic: true,
+    strokeColor: stcolor,
+    strokeOpacity: 1.0,
+    strokeWeight: 10,
+    id: ids[n],
+    no : n,
+    tradeinfo: tradeinfo[n]
+  });
+  alert(ids[n]);;
+
+linemap[n].setMap(map);
+document.getElementById('tradeinfoCost').innerHTML = "Cost "+tradeinfo[0].cost;
+document.getElementById('tradeinfoDistance').innerHTML = "Distance "+tradeinfo[0].distance;
+document.getElementById('tradeinfoTime').innerHTML = "Time "+tradeinfo[0].time;
+linemap[n].addListener('click', function(){
+  for(n=0;n<linemap.length;n++){
+    linemap[n].setMap(null);
+  }
+showArrays(event,this,flightPlanCoordinates,map,ids,tradeinfo);});
+  }
+  
+}
+
+
+function showArrays(event,thise,flightPlanCoordinates,map,ids,tradeinfo) {
+  alert(thise.id+thise.strokeColor);
+  var linemap = new Array();
+  for(n=0;n<flightPlanCoordinates.length;n++){
+    var stcolor;
+    if(thise.no==n)
+      stcolor = '#42f44e';
+    else
+      stcolor = '#bbc9c7';
+ linemap[n] = new google.maps.Polyline({
+    path: flightPlanCoordinates[n],
+    geodesic: true,
+    strokeColor: stcolor,
+    strokeOpacity: 1.0,
+    strokeWeight: 10,
+    id: ids[n],
+    no : n,
+    tradeinfo: tradeinfo[n]
+  });
+  alert(ids[n]);
+linemap[n].setMap(map);
+document.getElementById('tradeinfoCost').innerHTML = "Cost "+thise.tradeinfo.cost;
+document.getElementById('tradeinfoDistance').innerHTML = "Distance "+thise.tradeinfo.distance;
+document.getElementById('tradeinfoTime').innerHTML = "Time "+thise.tradeinfo.time;
+linemap[n].addListener('click', function(){
+    for(n=0;n<linemap.length;n++){
+    linemap[n].setMap(null);
+  }
+showArrays(event,this,flightPlanCoordinates,map,ids,tradeinfo);});
+  }
+}
+    </script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB29svahdqMp3ip8IdD9LPQV16YGJ2wVMk&amp;callback=initMap">
+    </script>
+
+<style type="text/css">
+  
+  .mapdiv{
+width: 921px;height: 522px;
+  }
+  .productname{
+        position: relative;
+    float: left;
+    top: 50px;
+  }
+  .productadddiv{
+        float: left;
+    position: relative;
+    margin-left: 50px;
+    top: 50px;
+  }
+  .productaddbutton{
+    background-color: #0eef0e;
+    color: white;
+    border: none;
+  }
+  .productspecificationdiv{
+    padding-left: 36px;
+  }
+  .productspecificationtable{
+     border: 1px solid rgba(128, 128, 128, 0.28);
+  }
+  .productspecificationtablehead{
+border: 1px solid black;
+  }
+</style>
+
+  <div id="map" class="mapdiv" "></div>
+</div>
+</div>
+
+<div class="tabcontents" ng-show="tab == 2">
+<div style="
+    height: 280px;
+"><div style="float:left;position: relative;">
+<div style="
+    padding: 40px;
+"><img src="assets/img/potassiumchloride.png" style="
+    height: 200px;
+"></div>
+  
+  
+
+</div>
+  <div class="productname">
+Morton Potassium Chloride 22.6KG or 50LB
+  Rs. 1150
+
+</div><div class="productadddiv"><button>ADDED</button></div>
+  
+  </div>
+  <div style="
+">
+    <div class="productspecificationdiv" "><b>Specification</b>
+<table class="productspecificationtable">
+  <thead class="productspecificationtablehead"><tr><td><b>Specification</b></td><td><b>Technical</b></td></tr></thead><tbody>
+  
+  <tr><td>KCl Dry Basis Assay (DBA)</td><td>98% min KCl Potassium Chloride</td></tr>
+<tr><td>K2O </td><td>60% min</td></tr>
+
+<tr><td>Iron</td><td>100 ppm</td></tr>
+<tr><td>Matter insoluble in water </td><td>0.1% max</td></tr>
+<tr><td>Moisture % by Wt. Max.  </td><td> 1%</td></tr>
+<tr><td></td><td></td></tr>
+
+  </tbody></table>
+
+</div></div>
+
+</div>
+
+<div class="tabcontents" ng-show="tab == 3">
+tab 3
+
+
+<line-plot graph-plots=graphPlots></line-plot>
+</div>
+
+<div class="tabcontents" ng-show="tab == 4">
+<div>
+<style type="text/css">
+  .orderdiv{
+    height: 120px;
+  }
+  .orderimagediv{
+        border: 1px solid black;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    float: left;
+    margin: 15px;
+  }
+  .orderinfodiv{
+        position: relative;
+    float: left;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .orderbroughtbutton{
+        background-color: green;
+    border: 1px solid green;
+    color: white;
+  }
+ .ordersoldbutton{
+      background-color: red;
+    border: 1px solid red;
+    color: white;
+ }
+ .orderbuyingbutton{
+    background-color: #4c8e4c;
+    border: 1px solid #4c8e4c;
+    color: white;
+ }
+ .ordersellingbutton{
+    background-color: orange;
+    border: orange;
+    color: white;
+ }
+ .ordercancelledbutton{
+    background-color: grey;
+    border: 1px solid grey;
+    color: white;
+ }
+</style>
+  <div class="orderdiv">
+
+  <div ng-repeat="order in orderHistories">
+    <a style="cursor: pointer;" ng-click="viewInvoice(order.orderId)">{{order.orderId}}</a>
+  </div>
+    <div class="orderimagediv"></div>
+    <div class="orderinfodiv">
+    <div><button class="orderbroughtbutton">Brought</button> Potassium Chloride
+</div>
+    <div>Value 250K,Volume 250MT</div>
+      <div> From Coimbatore</div>
+      <div></div>
+    </div>
+  
+  </div>
+<div class="orderdiv">
+    <div class="orderimagediv"></div>
+    <div class="orderinfodiv">
+    <div><button class="ordersoldbutton">Sold</button> Potassium Chloride
+</div>
+    <div>Value 250K,Volume 250MT</div>
+      <div> From Coimbatore</div>
+      <div></div>
+    </div>
+  
+  </div><div class="orderdiv">
+    <div class="orderimagediv"></div>
+    <div class="orderinfodiv">
+    <div><button class="orderbuyingbutton">Buying</button> Potassium Chloride
+</div>
+    <div>Value 250K,Volume 250MT</div>
+      <div> From Coimbatore</div>
+      <div></div>
+    </div>
+  
+  </div>
+
+<div class="orderdiv">
+    <div class="orderimagediv"></div>
+    <div class="orderinfodiv">
+    <div><button class="ordersellingbutton">Selling</button> Potassium Chloride
+</div>
+    <div>Value 250K,Volume 250MT</div>
+      <div> From Coimbatore</div>
+      <div></div>
+    </div>
+  
+  </div><div class="orderdiv">
+    <div class="orderimagediv"></div>
+    <div class="orderinfodiv">
+    <div><button class="ordercancelledbutton">Cancelled</button> Potassium Chloride
+</div>
+    <div>Value 250K,Volume 250MT</div>
+      <div> From Coimbatore</div>
+      <div></div>
+    </div>
+  
+  </div>
+
+
+
+
+
+  
+
+</div>
+</div>
+
+<div class="tabcontents" ng-show="tab == 5">
+<div>
+  <style type="text/css">
+    .searchbardiv{
+    height: 100px;
+    text-align: center;
+    }
+    .searchbarinput{
+          margin: 10px;
+    width: 700px;
+    position: relative;
+    top: 30px;
+    }
+    .searchresultdiv{
+    height: 380px;
+    overflow-y: auto;
+    }
+    .singlesearchresult{
+    height: 80px;
+    margin: 10px;
+    }
+    .searchresultimgdiv{
+          float: left;
+    margin-left: 44px;
+    }
+    .searchresultimg{
+      height: 80px;
+    }
+    .searchresultinfo{
+    float: left;
+    margin-left: 15px;
+    }
+    .searchresultcheckbox{
+          float: right;
+    margin-right: 30px;
+    }
+  </style>
+<div class="searchbardiv">
+<input type="text" placeholder="search a product" class="searchbarinput" ng-change="autocomplete()" id="autocompletesearch" ng-model="search" name="autocompletesearch">
+
+</div>
+  <div class="searchresultdiv">
+<div ng-repeat="productName in products" class="singlesearchresult">
+  <div class="searchresultimgdiv">
+    <div><img src="assets/img/iphone.jpg" class="searchresultimg"></div>
+  </div>
+    <div class="searchresultinfo"><div><b>iPhone 7 32 GB</b></div>
+    <div> Rs. 43500/-</div></div>
+    <div class="searchresultcheckbox"><input
+    type="checkbox"
+    name="selectedProducts[]"
+    value="{{productName}}"
+    ng-checked="selection.indexOf(productName) > -1"
+    ng-click="toggleSelection(productName)"
+  ></div>
+</div>
+
+
+<style type="text/css">
+
+  .addtostockareadiv{
+     text-align: center;
+  }
+  .addtostockareabutton{
+    background-color: #4c81bf;
+    border: 1px solid #4c81bf;
+    border-radius: 5px;
+    height: 28px;
+    font-size: 20;
+    color: white;
+  }
+
+</style>
+</div><div class="addtostockareadiv">
+
+<button ng-click="addProductsToStockarea()" class="addtostockareabutton">+Add to this Sockarea</button></div>
+
+
+</div>
+</div>
+<style type="text/css">
+  .mainsectionsettings{
+    width: 921px;position: relative;height: 522px;overflow-y: auto;
+  }
+  .stockarearenamediv{
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  .stockarearenameinput{
+        height: 35px;
+    width: 300px;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+  .stockarearenamebutton{
+    margin-left: 20px;
+    height: 35px;
+    width: 200px;
+    position: relative;
+    background-color: grey;
+    border: 1px solid grey;
+    font-size: 20px;
+    color: white;
+  }
+  .stockareadeletediv{
+    margin: 50px;
+    border: 1px solid;
+    padding: 20px;
+  }
+  .stockareadeletebutton{
+    font-size: 20px;
+    margin-left: 25px;
+    background-color: #4c81bf;
+    border: 1px solid #4c81bf;
+    color: white;
+  }
+
+</style>
+<div class="tabcontents" ng-show="tab == 6">
+<div id="mainsection" class="mainsectionsettings" ">
+<div class="stockarearenamediv">
+<input ng-model ="renameStockareaValue" type="text" class="stockarearenameinput" placeholder="Stock area S1">
+<button type="button" ng-click="renameStockarea()" class="stockarearenamebutton">Rename Stockarea</button>
+</div>
+  
+
+
+<div class="stockareadeletediv">
+ Deleting the product will remove the product added to this stock area. This will also remove any pending orders  in process for this product in this stock area. Once deleted this product order details cannot be retrieved
+<button ng-click="deleteProduct()" class="stockareadeletebutton">Delete this product</button>
+</div>
+
+<div class="stockareadeletediv" > Deleting the stock area will remove the product added to it. This will also remove any pending orders  in process for this product in this stock area. Once deleted this product order details cannot be retrieved
+<button ng-click="deleteStockarea()" class="stockareadeletebutton">Delete this stockarea</button></div>
+  <div></div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+<style type="text/css">
+  .leftsectiondiv{
+    display: table-cell;
+    height: 547px;
+    border-left: 1px solid #dddddd;
+  }
+  .stockdetailssectiondiv{
+       height: 240px;
+    background: white;
+    top: -16px;
+    position: relative; 
+  }
+  .stockareaheadingdiv{
+    text-align: center;padding: 10px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .stockaredetailsbuybutton{
+      height: 30px;
+    background-color: lightgreen;
+    border: 1px solid lightgreen;
+    color: white;
+  }
+  .productlistsectiondiv{
+        height: 323px;
+    margin-top: -16px;
+    background-color: white;
+  }
+  .productlistsearchbarinput{
+    max-width: 100%;
+    width: 320px;
+  }
+  .productlistingdiv{
+       height: 304px;
+           padding: 10px;
+    overflow-y: scroll; 
+  }
+</style>
+<div class="leftsectiondiv">
+  
+<div class="stockdetailssectiondiv">
+<div class="stockareaheadingdiv"><b>Stock Details</b></div>
+  <div  style="
+    padding: 10px;
+">Incoming Stock 2MT </div>
+  <div class="padding10">Outgoing Stock 3MT </div>
+  <div  class="padding10">In Stock 5MT</div>
+  <div class="padding10">
+
+  <button ng-click="viewbuy()" class="stockaredetailsbuybutton"><b>Buy @ 1200$ per Kg</b></button></div>
+
+
+</div>
+  <div class="productlistsectiondiv">
+  <div>
+  <button>+</button><input type="text" class="productlistsearchbarinput" placeholder="Search products">
+  
+  </div>
+<div class="productlistingdiv">
+<div>
+<input type="radio" name="product"> Potassium Chloride
+</div><div>
+<input type="radio" name="product"> Calcium Carbonate
+</div>
+<div>
+<input type="radio" name="product"> Sodium Chloride
+</div>
+<div>
+<input type="radio" name="product"> Hydrochloric Acid
+</div>
+<div>
+<input type="radio" name="product"> Potassium Chloride
+</div>
+
+
+</div>
+
+
+</div>
+
+</div></div>
+<style type="text/css">
+  
+  .stockareafootersectiondiv{
+        clear: both;
+    position: relative;
+    z-index: 10;
+    height: 80px;
+    overflow-x: scroll;
+    margin-top: 0;
+    border-top: 1px solid #dddddd;
+    background-color: white;
+  }
+  .stockareafooterbutton{
+    top: 5px;
+    height: 55px;
+    width: 55px;
+    position: relative;
+    padding: 8px;
+    border: 1px solid grey;
+    float: left;
+    margin-left: 20px;
+    border-radius: 98px;
+  }
+  .stockareafooterbuttontext{
+        position: relative;
+    top: 10px;
+    left: 10px;
+  }
+</style>
+
+<div class="stockareafootersectiondiv">
+
+
+<div class="stockareafooterbutton" ng-repeat="x in stockarea"><div class="stockareafooterbuttontext">{{x.stockareaName}}</div></div>
+
+
+</div>
+</div><!-- /.container -->

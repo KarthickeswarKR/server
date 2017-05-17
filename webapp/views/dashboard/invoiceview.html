@@ -1,0 +1,188 @@
+<style type="text/css">
+  /*!
+Pure v0.6.2
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+.pure-table caption {
+    color: #000;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.pure-table td,
+.pure-table th {
+    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: 0.5em 1em; /* cell padding */
+}
+
+/* Consider removing this next declaration block, as it causes problems when
+there's a rowspan on the first cell. Case added to the tests. issue#432 */
+.pure-table td:first-child,
+.pure-table th:first-child {
+    border-left-width: 0;
+}
+
+.pure-table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+/*
+striping:
+   even - #fff (white)
+   odd  - #f2f2f2 (light gray)
+*/
+.pure-table td {
+    background-color: transparent;
+}
+.pure-table-odd td {
+    background-color: #f2f2f2;
+}
+
+/* nth-child selector for modern browsers */
+.pure-table-striped tr:nth-child(2n-1) td {
+    background-color: #f2f2f2;
+}
+
+/* BORDERED TABLES */
+.pure-table-bordered td {
+    border-bottom: 1px solid #cbcbcb;
+}
+.pure-table-bordered tbody > tr:last-child > td {
+    border-bottom-width: 0;
+}
+
+
+/* HORIZONTAL BORDERED TABLES */
+
+.pure-table-horizontal td,
+.pure-table-horizontal th {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #cbcbcb;
+}
+.pure-table-horizontal tbody > tr:last-child > td {
+    border-bottom-width: 0;
+}
+
+
+</style>
+<section>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+
+</div>
+   <div class="row">
+      <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+         <form class="form inputs-underline" enctype="multipart/form-data">
+            <section>
+            <div style="
+    height: 80px;
+"><div style="float: left;"><h3>Buy</h3></div><div style="
+    position: relative;
+    top: 25px;
+    left: 30px;
+"> <h4>Estimated Cost <a>$23423423.00</a><a></a></h4></div></div>
+               <table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+           
+            <th>Paticulars</th>
+            <th>Information</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            
+            <td>Source</td>
+            <td>Madurai</td>
+        
+        </tr>
+
+        <tr>
+          
+            <td>Destination</td>
+            <td>Chennai</td>
+           
+        </tr>
+
+        <tr>
+          
+            <td>Material</td>
+            <td>Cement</td>
+           
+        </tr>
+
+                <tr>
+          
+            <td>Brand</td>
+            <td>India Cements</td>
+           
+        </tr>
+                <tr>
+          
+            <td>Variant</td>
+            <td>OPS43</td>
+           
+        </tr>
+                <tr>
+          
+            <td>Quantity</td>
+            <td><input type="text" placeholder="Package or No of Units"></td>
+           
+        </tr>
+                <tr>
+          
+            <td>Package</td>
+            <td><input type="radio" name="package" style="
+">&nbsp;25KG&nbsp;&nbsp;<input type="radio" name="package">&nbsp;50KG</td>
+           
+        </tr>
+                <tr>
+          
+            <td>Payments Terms</td>
+            <td>Cash on Delivery</td>
+           
+        </tr>
+
+    </tbody>
+</table>
+
+<div style="
+    padding-top: 25px;
+    padding-bottom: 25px;
+"><input ng-click="addOrder()" type="button" value="Add Order" style="
+    background-color: #337ab7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+"></div>
+               
+               <!--end form-group-->
+          </section>
+         </form>
+         <!--end form-->
+      </div>
+      <!--end col-md-6-->
+   </div>
+   <!--end row-->
+
