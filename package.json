@@ -1,23 +1,42 @@
 {
-  "name": "vgodown",
+  "name": "vgApp",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": " node  app.js"
   },
   "dependencies": {
+    "async": "^1.5.2",
     "audit-log": "^0.9.1",
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "elasticsearch": "^10.1.3",
     "express": "~4.13.1",
     "express-mailer": "^0.3.0",
+    "faker": "^2.0.x",
+    "google-distance": "^1.0.1",
+    "jade": "^1.11.0",
+    "kerberos": "0.0.17",
     "log4js": "^0.6.32",
+    "md5": "^2.0.0",
+    "method-override": "^2.3.x",
     "mongodb": "^2.1.3",
     "mongoose": "^4.0.x",
     "morgan": "~1.6.1",
     "nconf": "^0.6.x",
+    "node-schedule":"^1.1.1",
+    "node-uuid": "^1.4.7",
+    "oauth2orize": "^1.0.x",
+    "passport": "^0.2.x",
+    "passport-http": "^0.2.x",
+    "passport-http-bearer": "^1.0.x",
+    "passport-facebook":"^2.1.1",
+    "passport-oauth2-client-password": "^0.1.x",
+    "passport-google-oauth":"^1.0.0",
+    "res-handler": "0.0.3",
+    "twilio":"^2.11.0",
     "winston": "^0.8.x"
-
   },
   "description": "REST API for mobile applications using Node.js and Express.js framework with Mongoose.js for working with MongoDB. For access control this project use OAuth 2.0, with the help of OAuth2orize and Passport.js.",
   "main": "app.js",
@@ -26,7 +45,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/virtualgodown/vg.git"
+    "url": "git+https://github.com/virtualgodown/demo.git"
   },
   "bugs": {
     "url": "https://github.com/virtualgodown/vg/issues"

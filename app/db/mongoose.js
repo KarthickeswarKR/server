@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var config = require('../config/config');
+var app = process.cwd() + '/app/';
+var log = require('log4js').getLogger("mongoose");
+var config = require(app + 'config/config');
 var connect=process.env.MONGO_URL ||config.get('mongoose:uri');
 var options = {
 	replset: {
@@ -15,10 +17,10 @@ var options = {
 mongoose.connect(connect,options);
 var db = mongoose.connection;
 db.on('error', function (err) {
-	console.error('Connection error:', err.message);
+	log.error('Connection error:', err.message);
 });
 db.once('open', function callback () {
-	console.info("Connected to DB!");
+	log.info("Connected to DB!");
 });
 
 module.exports = mongoose;
