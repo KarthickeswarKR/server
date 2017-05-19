@@ -40,7 +40,7 @@ vg.use(logger('combined', {stream: accessLogStream}));
 vg.use(bodyParser.json());
 vg.use(bodyParser.urlencoded({ extended: false }));
 vg.use(logger('dev'));
-vg.use('/', express.static(__dirname + '/dist'));
+vg.use('/', express.static(__dirname + '/webapp'));
 vg.use('/api/auth',auth);
 vg.use('/api/unit', unit);
 vg.use('/api/orders', order);

@@ -19,7 +19,7 @@ var vgApp = angular.module('vgApp', [
 vgApp.config(function ($urlRouterProvider, $stateProvider, $httpProvider) {
     console.log('loginController');
     $urlRouterProvider.otherwise('/login');
-     
+
 
 });
 
@@ -41,14 +41,19 @@ vgApp.config(function ($httpProvider, $urlRouterProvider) {
      *  Need to convert this into purely service based
      *
      */
-    $httpProvider.interceptors.push(function ($injector, $location) {
-
+    $httpProvider.interceptors.push(function ($injector, $location,$state) {
+      var systemService = $injector.get("SystemService");
+      var access_token = systemService.getCurrentAccessToken();
+if(access_token==null){
+  $state.go('login');
+}
+else{
         return {
             request: function (config) {
 
-                if (config.url.indexOf('/') === 0) {
+                if (config.url.indexOf('/') >= 0) {
 
-                    // create instance for systemService
+                    // create instance for systmService
                     var systemService = $injector.get("SystemService");
 
                     if (config.url.indexOf('oauth/token') > -1) {
@@ -58,13 +63,15 @@ vgApp.config(function ($httpProvider, $urlRouterProvider) {
                     } else {
 
                         var access_token = systemService.getCurrentAccessToken();
-
+                        var userId = systemService.getCurrentUserId();
                         if (access_token == null) {
                             $location.path('/login')
                         } else {
                            // config.url = systemService.getCurrentInstance().serviceName + config.url;
                             config.url = config.url;
                             config.headers.authorization = "Bearer " + access_token;
+                            config.headers.userid =  userId;
+
                         }
                     }
                 }
@@ -72,6 +79,7 @@ vgApp.config(function ($httpProvider, $urlRouterProvider) {
                 return config;
             }
         }
+      }
 
     });
 });

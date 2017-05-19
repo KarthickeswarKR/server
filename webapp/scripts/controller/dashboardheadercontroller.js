@@ -47,7 +47,7 @@ console.log(result);
 	   getUserDetails <-   informa
 
 	   $scope.userName = data.userName;
-	 */ 
+	 */
      /*
 dashboardService.getStockArea(localStorage.getItem("userId")).then(function (result) {
             if (result.data.stockarea != null) {
@@ -109,7 +109,7 @@ vgApp.directive('linePlot', [function () {
 
 
 vgApp.controller('addStockareaCtrl', ['$scope', '$uibModalInstance', 'stockareaid', 'productid', '$state', '$timeout', '$uibModal', '$rootScope', function($scope, $uibModalInstance, stockareaid, productid, $state, $timeout, $uibModal, $rootScope) {
-   
+
 
 $scope.initMap = function () {
     var map2 = new google.maps.Map(document.getElementById('map2'), {
@@ -129,12 +129,15 @@ $scope.initMap = function () {
     $scope.close = function() {
         $uibModalInstance.dismiss('cancel');
     };
+		$scope.add=function(){
+
+		}
     $scope.view = function() {
         console.log(id);
         console.log("in material view");
 
     };
-    
 
-   
+
+
 }]);
