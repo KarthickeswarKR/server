@@ -25,7 +25,7 @@ var config = require('./app/config/config');
 var logconfig=require('./app/config/logconfig');
 var vg = express();
 var app = process.cwd() + '/app/';
-require(app + '/auth/auth');
+require(app + '/auth/auth')
 var port = process.env.PORT|| config.get('port');
 vg.use(passport.initialize());
 var oauth2 = require(app + '/auth/Oauth2');
